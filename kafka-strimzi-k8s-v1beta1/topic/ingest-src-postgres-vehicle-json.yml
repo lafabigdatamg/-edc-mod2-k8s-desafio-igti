@@ -16,7 +16,7 @@ spec:
     value.converter.schemas.enable: true
     connection.url: "jdbc:postgresql://database-igti.cw0jcpthi8jm.us-east-2.rds.amazonaws.com:5432/igti"
     connection.user: "postgres"
-    connection.password: ""
+    connection.password: "bootigti22"
     connection.attempts: "2"
     query: "SELECT * FROM public.vehicle"
     mode: "incrementing"
