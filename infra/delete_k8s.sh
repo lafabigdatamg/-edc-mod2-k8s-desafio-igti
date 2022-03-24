@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-eksctl delete cluster --name igtik8s --region us-east-2
+eksctl delete cluster --name igtik8sv2 --region us-east-2
