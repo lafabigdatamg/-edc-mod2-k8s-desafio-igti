@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1alpha1
 kind: KafkaConnector
 metadata:
-  name: s3-sink-connector-igtiedh-kuqo17
+  name: s3-sink-connector-igtiedh-vehicle
   labels:
     strimzi.io/cluster: igtiedh
 spec:
@@ -12,17 +12,17 @@ spec:
     value.converter: "org.apache.kafka.connect.json.JsonConverter"
     key.converter.schemas.enable: "false"
     value.converter.schemas.enable: "false"
-    topics: ""
-    s3.bucket.name: ""
+    topics: "src-postgres-vehicle-json"
+    s3.bucket.name: "datalake-igti-mod2"
     s3.region: us-east-2
     flush.size: 30000
     format.class: "io.confluent.connect.s3.format.json.JsonFormat"
     schema.generator.class: "io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator"
     partitioner.class: "io.confluent.connect.storage.partitioner.HourlyPartitioner"
     storage.class: "io.confluent.connect.s3.storage.S3Storage"
-    topics.dir: "landing-zone/kafka_events"
-    aws.access.key.id: ""
-    aws.secret.access.key: ""
+    topics.dir: "vehicle/landing-zone/kafka_events"
+    aws.access.key.id: "AKIAXXC44M3QLQPLRPDB"
+    aws.secret.access.key: "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"
     path.format: "'year'=YYYY/'month'=MM/'day'=DD/'hour'=HH"
     locale: "pt_BR"
     timezone: "America/Sao_Paulo"

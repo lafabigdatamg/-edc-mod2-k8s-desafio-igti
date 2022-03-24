@@ -2,7 +2,7 @@ apiVersion: kafka.strimzi.io/v1alpha1
 kind: "KafkaConnector"
 metadata:
   # connector name
-  name: "ingest-src-postgresql-customers-json-3200e849928721"
+  name: "ingest-src-postgresql-flight-json-3200e849928721"
   labels:
     # kafka connect [cluster] name
     strimzi.io/cluster: igtiedh
@@ -18,9 +18,9 @@ spec:
     connection.user: "postgres"
     connection.password: ""
     connection.attempts: "2"
-    query: "SELECT * FROM public.customers"
+    query: "SELECT * FROM public.flight"
     mode: "incrementing"
-    topic.prefix: "src-postgres-customers-json"
+    topic.prefix: "src-postgres-flight-json"
     incrementing.column.name: "id"
     validate.non.null: "false"
     transforms: "createKey,extractInt,InsertTopic,InsertSourceDetails"
